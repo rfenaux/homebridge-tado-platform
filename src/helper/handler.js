@@ -1255,6 +1255,7 @@ module.exports = (api, accessories, config, tado, telegram) => {
         let characteristicCo = api.hap.Characteristic.CarbonMonoxideLevel;
 
         if (airQuality.outdoorQuality) {
+          console.log("--- outdoorQuality ---", airQuality);
           let returnPol = (target) =>
             airQuality.outdoorQuality.pollutants.filter((pol) => pol && pol.scientificName.includes(target));
 
@@ -1271,14 +1272,16 @@ module.exports = (api, accessories, config, tado, telegram) => {
               ? 5
               : 0;
 
-          console.log("--- concentration ---",
-            returnPol('PM<sub>10</sub>'),
-            returnPol('PM<sub>2.5</sub>'),
-            returnPol('NO<sub>2</sub>'),
-            returnPol('O<sub>3</sub>'),
-            returnPol('SO<sub>2</sub>'),
-            returnPol('CO')
-          );
+          console.log("--- config.homeId--",config);
+
+          // console.log("--- concentration ---",
+          //   returnPol('PM<sub>10</sub>'),
+          //   returnPol('PM<sub>2.5</sub>'),
+          //   returnPol('NO<sub>2</sub>'),
+          //   returnPol('O<sub>3</sub>'),
+          //   returnPol('SO<sub>2</sub>'),
+          //   returnPol('CO')
+          // );
 
           let pm10 = 0;// returnPol('PM<sub>10</sub>')[0].concentration.value;
           let pm25 = 0;// returnPol('PM<sub>2.5</sub>')[0].concentration.value;
