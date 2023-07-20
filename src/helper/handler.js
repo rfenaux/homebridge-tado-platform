@@ -284,14 +284,14 @@ module.exports = (api, accessories, config, tado, telegram) => {
             .filter((room) => room);
 
           if (value) {
-            if (target === 'Central' || target === 'Shedule') {
+            if (target === 'Central' || target === 'Schedule') {
               const roomIds = accessory.context.config.rooms
                 .map((room) => {
                   return room.id;
                 })
                 .filter((id) => id);
 
-              await tado.resumeShedule(config.homeId, roomIds);
+              await tado.resumeSchedule(config.homeId, roomIds);
 
               //Turn all back to AUTO/ON
               heatAccessories.forEach((acc) => {
@@ -1271,12 +1271,21 @@ module.exports = (api, accessories, config, tado, telegram) => {
               ? 5
               : 0;
 
-          let pm10 = returnPol('PM<sub>10</sub>')[0].concentration.value;
-          let pm25 = returnPol('PM<sub>2.5</sub>')[0].concentration.value;
-          let ndd = returnPol('NO<sub>2</sub>')[0].concentration.value;
-          let od = returnPol('O<sub>3</sub>')[0].concentration.value;
-          let sdd = returnPol('SO<sub>2</sub>')[0].concentration.value;
-          let co = returnPol('CO')[0].concentration.value;
+          console.log("--- concentration ---",
+            returnPol('PM<sub>10</sub>')[0]?.concentration?.value,
+            returnPol('PM<sub>2.5</sub>')[0]?.concentration?.value,
+            returnPol('NO<sub>2</sub>')[0]?.concentration?.value,
+            returnPol('O<sub>3</sub>')[0]?.concentration?.value,
+            returnPol('SO<sub>2</sub>')[0]?.concentration?.value,
+            returnPol('CO')[0]?.concentration?.value
+          );
+
+          let pm10 = O;// returnPol('PM<sub>10</sub>')[0].concentration.value;
+          let pm25 = O;// returnPol('PM<sub>2.5</sub>')[0].concentration.value;
+          let ndd = O;// returnPol('NO<sub>2</sub>')[0].concentration.value;
+          let od = O;// returnPol('O<sub>3</sub>')[0].concentration.value;
+          let sdd = O;// returnPol('SO<sub>2</sub>')[0].concentration.value;
+          let co = O;// returnPol('CO')[0].concentration.value;
 
           if (!isNaN(aqi)) service.getCharacteristic(characteristicAqi).updateValue(aqi);
 
