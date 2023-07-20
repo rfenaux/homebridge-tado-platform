@@ -1254,56 +1254,57 @@ module.exports = (api, accessories, config, tado, telegram) => {
         let characteristicSdd = api.hap.Characteristic.SulphurDioxideDensity;
         let characteristicCo = api.hap.Characteristic.CarbonMonoxideLevel;
 
-        if (airQuality.outdoorQuality) {
-          console.log("--- outdoorQuality ---", airQuality);
-          let returnPol = (target) =>
-            airQuality.outdoorQuality.pollutants.filter((pol) => pol && pol.scientificName.includes(target));
+        // if (airQuality.outdoorQuality) {
+        // if (false) {
+        //   console.log("--- outdoorQuality ---", airQuality);
+        //   let returnPol = (target) =>
+        //     airQuality.outdoorQuality.pollutants.filter((pol) => pol && pol.scientificName.includes(target));
 
-          let aqi =
-            airQuality.outdoorQuality.aqi.value >= 80
-              ? 1
-              : airQuality.outdoorQuality.aqi.value >= 60
-              ? 2
-              : airQuality.outdoorQuality.aqi.value >= 40
-              ? 3
-              : airQuality.outdoorQuality.aqi.value >= 20
-              ? 4
-              : airQuality.outdoorQuality.aqi.value >= 0
-              ? 5
-              : 0;
+        //   let aqi =
+        //     airQuality.outdoorQuality.aqi.value >= 80
+        //       ? 1
+        //       : airQuality.outdoorQuality.aqi.value >= 60
+        //       ? 2
+        //       : airQuality.outdoorQuality.aqi.value >= 40
+        //       ? 3
+        //       : airQuality.outdoorQuality.aqi.value >= 20
+        //       ? 4
+        //       : airQuality.outdoorQuality.aqi.value >= 0
+        //       ? 5
+        //       : 0;
 
-          console.log("--- config.homeId--",config);
+        //   // console.log("--- config.homeId--",config);
 
-          // console.log("--- concentration ---",
-          //   returnPol('PM<sub>10</sub>'),
-          //   returnPol('PM<sub>2.5</sub>'),
-          //   returnPol('NO<sub>2</sub>'),
-          //   returnPol('O<sub>3</sub>'),
-          //   returnPol('SO<sub>2</sub>'),
-          //   returnPol('CO')
-          // );
+        //   // console.log("--- concentration ---",
+        //   //   returnPol('PM<sub>10</sub>'),
+        //   //   returnPol('PM<sub>2.5</sub>'),
+        //   //   returnPol('NO<sub>2</sub>'),
+        //   //   returnPol('O<sub>3</sub>'),
+        //   //   returnPol('SO<sub>2</sub>'),
+        //   //   returnPol('CO')
+        //   // );
 
-          let pm10 = 0;// returnPol('PM<sub>10</sub>')[0].concentration.value;
-          let pm25 = 0;// returnPol('PM<sub>2.5</sub>')[0].concentration.value;
-          let ndd = 0;// returnPol('NO<sub>2</sub>')[0].concentration.value;
-          let od = 0;// returnPol('O<sub>3</sub>')[0].concentration.value;
-          let sdd = 0;// returnPol('SO<sub>2</sub>')[0].concentration.value;
-          let co = 0;// returnPol('CO')[0].concentration.value;
+        //   let pm10 = 0;// returnPol('PM<sub>10</sub>')[0].concentration.value;
+        //   let pm25 = 0;// returnPol('PM<sub>2.5</sub>')[0].concentration.value;
+        //   let ndd = 0;// returnPol('NO<sub>2</sub>')[0].concentration.value;
+        //   let od = 0;// returnPol('O<sub>3</sub>')[0].concentration.value;
+        //   let sdd = 0;// returnPol('SO<sub>2</sub>')[0].concentration.value;
+        //   let co = 0;// returnPol('CO')[0].concentration.value;
 
-          if (!isNaN(aqi)) service.getCharacteristic(characteristicAqi).updateValue(aqi);
+        //   if (!isNaN(aqi)) service.getCharacteristic(characteristicAqi).updateValue(aqi);
 
-          if (!isNaN(pm10)) service.getCharacteristic(characteristicPm10).updateValue(pm10);
+        //   if (!isNaN(pm10)) service.getCharacteristic(characteristicPm10).updateValue(pm10);
 
-          if (!isNaN(pm25)) service.getCharacteristic(characteristicPm25).updateValue(pm25);
+        //   if (!isNaN(pm25)) service.getCharacteristic(characteristicPm25).updateValue(pm25);
 
-          if (!isNaN(ndd)) service.getCharacteristic(characteristicNdd).updateValue(ndd * 1.9123);
+        //   if (!isNaN(ndd)) service.getCharacteristic(characteristicNdd).updateValue(ndd * 1.9123);
 
-          if (!isNaN(od)) service.getCharacteristic(characteristicOd).updateValue(od * 1.9954);
+        //   if (!isNaN(od)) service.getCharacteristic(characteristicOd).updateValue(od * 1.9954);
 
-          if (!isNaN(sdd)) service.getCharacteristic(characteristicSdd).updateValue(sdd * 2.6647);
+        //   if (!isNaN(sdd)) service.getCharacteristic(characteristicSdd).updateValue(sdd * 2.6647);
 
-          if (!isNaN(co)) service.getCharacteristic(characteristicCo).updateValue(co / 1000); //ppb to ppm
-        }
+        //   if (!isNaN(co)) service.getCharacteristic(characteristicCo).updateValue(co / 1000); //ppb to ppm
+        // }
       }
     }
 
