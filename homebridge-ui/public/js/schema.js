@@ -5,7 +5,7 @@ const schema = {
     'name': {
       'title': 'Name',
       'type': 'string',
-      'default': 'TadoPlatform',
+      'default': 'Tado',
       'description': 'Name for the log.'
     },
     'debug': {

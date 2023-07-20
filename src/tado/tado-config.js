@@ -1023,7 +1023,7 @@ module.exports = {
     const configJSON = await fs.readJson(storePath + '/config.json');
 
     for (const i in configJSON.platforms)
-      if (configJSON.platforms[i].platform === 'TadoPlatform') configJSON.platforms[i] = config;
+      if (configJSON.platforms[i].platform === 'Tado') configJSON.platforms[i] = config;
 
     fs.writeJsonSync(storePath + '/config.json', configJSON, { spaces: 4 });
 

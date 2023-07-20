@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "TadoPlatform",
+  "pluginAlias": "Tado",
   "pluginType": "platform",
   "singular": true,
   "customUi": true,
@@ -8,7 +8,7 @@
     "name": {
       "title": "Name",
       "type": "string",
-      "default": "TadoPlatform",
+      "default": "Tado",
       "description": "Name for the log."
     },
     "debug": {

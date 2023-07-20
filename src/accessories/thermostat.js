@@ -317,7 +317,7 @@ class ThermostatAccessory {
       const configJSON = await fs.readJson(this.api.user.storagePath() + '/config.json');
 
       for (const i in configJSON.platforms)
-        if (configJSON.platforms[i].platform === 'TadoPlatform')
+        if (configJSON.platforms[i].platform === 'Tado')
           for (const home in configJSON.platforms[i].homes)
             if (configJSON.platforms[i].homes[home].name === this.accessory.context.config.homeName)
               configJSON.platforms[i].homes[home].temperatureUnit = value ? 'FAHRENHEIT' : 'CELSIUS';

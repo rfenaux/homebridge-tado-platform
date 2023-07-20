@@ -7,8 +7,8 @@
     ],
     "platforms": [
         {
-            "name": "TadoPlatform",
-            "platform": "TadoPlatform",
+            "name": "Tado",
+            "platform": "Tado",
             "debug": false,
             "homes": [
                 {

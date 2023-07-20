@@ -25,7 +25,7 @@ const CustomTypes = require('./types/custom.js');
 const EveTypes = require('./types/eve.js');
 
 const PLUGIN_NAME = 'homebridge-tado-platform-rf';
-const PLATFORM_NAME = 'TadoPlatform';
+const PLATFORM_NAME = 'Tado';
 
 var Accessory, UUIDGen, FakeGatoHistoryService;
 
@@ -33,10 +33,10 @@ module.exports = function (homebridge) {
   Accessory = homebridge.platformAccessory;
   UUIDGen = homebridge.hap.uuid;
 
-  return TadoPlatform;
+  return Tado;
 };
 
-function TadoPlatform(log, config, api) {
+function Tado(log, config, api) {
   if (!api || !config) return;
 
   //init logger
@@ -61,7 +61,7 @@ function TadoPlatform(log, config, api) {
   this.api.on('didFinishLaunching', this.didFinishLaunching.bind(this));
 }
 
-TadoPlatform.prototype = {
+Tado.prototype = {
   setupPlugin: async function () {
     try {
       if (this.config.user && this.config.user.length) {

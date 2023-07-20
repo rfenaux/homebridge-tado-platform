@@ -8,6 +8,6 @@
 'use strict';
 
 module.exports = function (homebridge) {
-  let TadoPlatform = require('./src/platform.js')(homebridge);
-  homebridge.registerPlatform('homebridge-tado-platform-rf', 'TadoPlatform', TadoPlatform, true);
+  let Tado = require('./src/platform.js')(homebridge);
+  homebridge.registerPlatform('homebridge-tado-platform-rf', 'Tado', Tado, true);
 };

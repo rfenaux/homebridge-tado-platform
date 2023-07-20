@@ -1412,8 +1412,8 @@ async function fetchDevices(credentials, refresh, resync){
     if(!pluginConfig.length){
     
       pluginConfig = [{
-        platform: 'TadoPlatform',
-        name: 'TadoPlatform',
+        platform: 'Tado',
+        name: 'Tado',
         homes: [] 
       }];
       
