@@ -1272,20 +1272,20 @@ module.exports = (api, accessories, config, tado, telegram) => {
               : 0;
 
           console.log("--- concentration ---",
-            returnPol('PM<sub>10</sub>')[0]?.concentration?.value,
-            returnPol('PM<sub>2.5</sub>')[0]?.concentration?.value,
-            returnPol('NO<sub>2</sub>')[0]?.concentration?.value,
-            returnPol('O<sub>3</sub>')[0]?.concentration?.value,
-            returnPol('SO<sub>2</sub>')[0]?.concentration?.value,
-            returnPol('CO')[0]?.concentration?.value
+            returnPol('PM<sub>10</sub>'),
+            returnPol('PM<sub>2.5</sub>'),
+            returnPol('NO<sub>2</sub>'),
+            returnPol('O<sub>3</sub>'),
+            returnPol('SO<sub>2</sub>'),
+            returnPol('CO')
           );
 
-          let pm10 = O;// returnPol('PM<sub>10</sub>')[0].concentration.value;
-          let pm25 = O;// returnPol('PM<sub>2.5</sub>')[0].concentration.value;
-          let ndd = O;// returnPol('NO<sub>2</sub>')[0].concentration.value;
-          let od = O;// returnPol('O<sub>3</sub>')[0].concentration.value;
-          let sdd = O;// returnPol('SO<sub>2</sub>')[0].concentration.value;
-          let co = O;// returnPol('CO')[0].concentration.value;
+          let pm10 = 0;// returnPol('PM<sub>10</sub>')[0].concentration.value;
+          let pm25 = 0;// returnPol('PM<sub>2.5</sub>')[0].concentration.value;
+          let ndd = 0;// returnPol('NO<sub>2</sub>')[0].concentration.value;
+          let od = 0;// returnPol('O<sub>3</sub>')[0].concentration.value;
+          let sdd = 0;// returnPol('SO<sub>2</sub>')[0].concentration.value;
+          let co = 0;// returnPol('CO')[0].concentration.value;
 
           if (!isNaN(aqi)) service.getCharacteristic(characteristicAqi).updateValue(aqi);
 
