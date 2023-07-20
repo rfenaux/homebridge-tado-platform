@@ -3,7 +3,7 @@
   "pluginType": "platform",
   "singular": true,
   "customUi": true,
-  "footerDisplay": "For documentation please see [GitHub repository](https://github.com/SeydX/homebridge-tado-platform)",
+  "footerDisplay": "For documentation please see [GitHub repository](https://github.com/rfenaux/homebridge-tado-platform)",
   "schema": {
     "name": {
       "title": "Name",

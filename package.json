@@ -1,35 +1,11 @@
 {
   "name": "homebridge-tado-platform",
-  "version": "6.0.14",
+  "version": "6.0.15",
   "description": "homebridge-tado-platform",
   "main": "index.js",
-  "funding": [
-    {
-      "type": "paypal",
-      "url": "https://paypal.me/seydx"
-    },
-    {
-      "type": "kofi",
-      "url": "https://ko-fi.com/seydx"
-    },
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/seydx"
-    }
-  ],
   "scripts": {
     "lint": "eslint --fix ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SeydX/homebridge-tado-platform.git"
-  },
-  "author": "SeydX (https://github.com/SeydX/homebridge-tado-platform)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/SeydX/homebridge-tado-platform/issues"
-  },
-  "homepage": "https://github.com/SeydX/homebridge-tado-platform#readme",
   "keywords": [
     "tado",
     "thermostat",
@@ -62,5 +38,15 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.0"
-  }
+  },
+  "author": "rfenaux",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rfenaux/homebridge-tado-platform.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rfenaux/homebridge-tado-platform/issues"
+  },
+  "homepage": "https://github.com/rfenaux/homebridge-tado-platform#readme"
 }

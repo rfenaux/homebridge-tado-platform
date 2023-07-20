@@ -1,6 +1,6 @@
 # Changelog
 
-## v6.0.14 - 2021-05-19
+## v6.0.15 - 2021-05-19
 - Fixed an issue where the thermostat displayed wrong room temperature due to wrong celsius/fahrenheit calculation
 - Bump dependencies
 
