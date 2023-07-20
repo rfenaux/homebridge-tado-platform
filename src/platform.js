@@ -24,7 +24,7 @@ const ThermostatAccessory = require('./accessories/thermostat.js');
 const CustomTypes = require('./types/custom.js');
 const EveTypes = require('./types/eve.js');
 
-const PLUGIN_NAME = 'homebridge-tado-platform';
+const PLUGIN_NAME = 'homebridge-tado-platform-rf';
 const PLATFORM_NAME = 'TadoPlatform';
 
 var Accessory, UUIDGen, FakeGatoHistoryService;
